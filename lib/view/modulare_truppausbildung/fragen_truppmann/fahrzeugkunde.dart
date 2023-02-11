@@ -22,7 +22,7 @@ class Fahrzeugkunde {
     },
     {
       'questionText':
-          'Welches Feuerlöschfahrzeug besitzt keinen Löschwassertank?',
+          'Welches Feuerwehrlöschfahrzeug besitzt keinen Löschwassertank?',
       'answers': [
         {'text': 'LF 20', 'score': 0},
         {'text': 'MLF', 'score': 0},

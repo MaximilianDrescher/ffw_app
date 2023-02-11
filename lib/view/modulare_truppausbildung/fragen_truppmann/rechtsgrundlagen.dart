@@ -174,5 +174,34 @@ class Rechtsgrundlagen {
         {'text': 'Keine, weil beide im Trupp das Gleiche tun', 'score': 0}
       ]
     },
+    {
+      'questionText': 'Die Unfallverhütungsvorschrift UVV9 hat Gültigkeit... ?',
+      'answers': [
+        {'text': 'Bei Einhaltung der Versicherungsbedienungen', 'score': 0},
+        {'text': 'Nur bei Einsätzen', 'score': 0},
+        {'text': 'Bei Einsätzen, Übungen und Ausbildung', 'score': 1}
+      ]
+    },
+    {
+      'questionText':
+          'Sie bemerken als Truppführer, dass ihr Truppmann die B-Druckschläuche falsch auswirft. Bis jetzt hat er sich noch nicht verletzt. Wie handeln Sie?',
+      'answers': [
+        {
+          'text':
+              'Ich muss ihn auf das fachgerechte Auswerfen hinweisen und überwachen',
+          'score': 1
+        },
+        {
+          'text':
+              'Er hat das richtige Auswerfen in seiner Ausbildung gelernt und muss Erfahrung sammeln',
+          'score': 0
+        },
+        {
+          'text':
+              'Es ist noch nichts passiert, außerdem ist es Aufgabe des Einheitsführers etwas zu sagen',
+          'score': 0
+        }
+      ]
+    },
   ];
 }

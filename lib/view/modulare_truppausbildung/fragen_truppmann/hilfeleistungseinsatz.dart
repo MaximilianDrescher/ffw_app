@@ -1,5 +1,5 @@
 class THL {
-  static const String themengebiet = "Technische Hilfeleistung";
+  static const String themengebiet = "Hilfeleistungseinsatz";
 
   static final fragenTHL = [
     {

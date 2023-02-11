@@ -1,24 +1,26 @@
 import 'dart:math';
-import 'package:ffw_app/constants/buttons/standard_button.dart';
-import 'package:ffw_app/constants/colors.dart';
-import 'package:ffw_app/view/modulare_truppausbildung/fragen_truppmann/verhalten_bei_gefahr.dart';
-import 'package:ffw_app/view/quiz.dart';
+
+import 'package:ffw_app/view/modulare_truppausbildung/fragen_truppmann/alternative_antriebstechniken_bei_autos.dart';
+import 'package:ffw_app/view/modulare_truppausbildung/fragen_truppmann/rechtsgrundlagen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../constants/buttons/standard_button.dart';
+import '../../constants/colors.dart';
 import '../../constants/custom_widgets/alert_with_function.dart';
-import 'fragen_truppmann/brennen_und_loeschen.dart';
-import 'fragen_truppmann/alternative_antriebstechniken_bei_autos.dart';
-import 'fragen_truppmann/loescheinsatz.dart';
-import 'fragen_truppmann/rechtsgrundlagen.dart';
-import 'fragen_truppmann/fahrzeugkunde.dart';
-import 'fragen_truppmann/funk.dart';
-import 'fragen_truppmann/verhalten_im_einsatz.dart';
-import 'fragen_truppmann/geratekunde.dart';
-import 'fragen_truppmann/hilfeleistungs_loescheinsatz.dart';
-import 'fragen_truppmann/sichern_und_absichern.dart';
-import 'fragen_truppmann/technische_hilfeleistung.dart';
-import 'fragen_truppmann/rettung_von_personen.dart';
-import 'fragen_truppmann/fahrzeugtechnik.dart';
+import '../quiz.dart';
 import 'fragen_truppmann/abc.dart';
+import 'fragen_truppmann/brennen_und_loeschen.dart';
+import 'fragen_truppmann/erste_hilfe.dart';
+import 'fragen_truppmann/fahrzeugkunde.dart';
+import 'fragen_truppmann/fahrzeugtechnik.dart';
+import 'fragen_truppmann/funk.dart';
+import 'fragen_truppmann/geratekunde.dart';
+import 'fragen_truppmann/hilfeleistungseinsatz.dart';
+import 'fragen_truppmann/loescheinsatz.dart';
+import 'fragen_truppmann/sichern_und_absichern.dart';
+import 'fragen_truppmann/verhalten_bei_gefahr.dart';
+import 'fragen_truppmann/verhalten_im_einsatz.dart';
 
 class ModulareTruppAusbildung extends StatefulWidget {
   ModulareTruppAusbildung({Key? key}) : super(key: key);
@@ -152,20 +154,6 @@ class _ModulareTruppAusbildung extends State<ModulareTruppAusbildung> {
             SizedBox(
               height: size.height * 0.02,
             ),
-            StandardButton(
-                text: 'Hilfeleistung- Löscheinsatz',
-                color: buttonColor,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => Quiz(
-                                questions: HilfeleistungsLoescheinsatz
-                                    .fragenHilfeleistungsLoescheinsatz,
-                                themengebiet:
-                                    HilfeleistungsLoescheinsatz.themengebiet,
-                              )));
-                }),
             SizedBox(
               height: size.height * 0.02,
             ),
@@ -278,9 +266,8 @@ class _ModulareTruppAusbildung extends State<ModulareTruppAusbildung> {
                       context,
                       MaterialPageRoute(
                           builder: (_) => Quiz(
-                              questions:
-                                  RettungVonPersonen.fragenRettungVonPersonen,
-                              themengebiet: RettungVonPersonen.themengebiet)));
+                              questions: ErsteHilfe.fragenRettungVonPersonen,
+                              themengebiet: ErsteHilfe.themengebiet)));
                 }),
             SizedBox(
               height: size.height * 0.02,
@@ -301,7 +288,7 @@ class _ModulareTruppAusbildung extends State<ModulareTruppAusbildung> {
               height: size.height * 0.02,
             ),
             StandardButton(
-                text: 'Technische Hilfeleistung',
+                text: 'Hilfeleistungseinsatz',
                 color: buttonColor,
                 onPressed: () {
                   Navigator.push(
@@ -358,21 +345,20 @@ class _ModulareTruppAusbildung extends State<ModulareTruppAusbildung> {
   }
 
   void addAllQuestions() {
+    widget.allQuestions.addAll(AbcEinsatz.fragenPhysische_AbcEinsatz);
     widget.allQuestions.addAll(AlternativeAntriebstechnikenBeiAutos
         .fragenalternativeAntriebstechnikenBeiAutos);
     widget.allQuestions.addAll(BrennenUndLoeschen.fragenBrennenUndLoeschen);
+    widget.allQuestions.addAll(ErsteHilfe.fragenRettungVonPersonen);
     widget.allQuestions.addAll(Fahrzeugkunde.fragenFahrzeugkunde);
-    widget.allQuestions.addAll(Funk.fragenFunk);
-    widget.allQuestions.addAll(VerhaltenBeiGefahr.fragenVerhaltenBeiGefahr);
-    widget.allQuestions.addAll(Geraetekunde.fragenGeraetekunde);
-    widget.allQuestions
-        .addAll(HilfeleistungsLoescheinsatz.fragenHilfeleistungsLoescheinsatz);
-    widget.allQuestions.addAll(Loescheinsatz.fragenLoescheinsatz);
-    widget.allQuestions.addAll(VerhaltenImEinsatz.fragenVerhaltenImEinsatz);
-    widget.allQuestions.addAll(RettungVonPersonen.fragenRettungVonPersonen);
-    widget.allQuestions.addAll(SichernUndAbsichern.fragenSichernUndAbsichern);
-    widget.allQuestions.addAll(THL.fragenTHL);
     widget.allQuestions.addAll(Fahrzeugtechnik.fragenFahrzeugtechnik);
-    widget.allQuestions.addAll(AbcEinsatz.fragenPhysische_AbcEinsatz);
+    widget.allQuestions.addAll(Funk.fragenFunk);
+    widget.allQuestions.addAll(Geraetekunde.fragenGeraetekunde);
+    widget.allQuestions.addAll(THL.fragenTHL);
+    widget.allQuestions.addAll(Loescheinsatz.fragenLoescheinsatz);
+    widget.allQuestions.addAll(Rechtsgrundlagen.fragenRechtsgrundlagen);
+    widget.allQuestions.addAll(SichernUndAbsichern.fragenSichernUndAbsichern);
+    widget.allQuestions.addAll(VerhaltenBeiGefahr.fragenVerhaltenBeiGefahr);
+    widget.allQuestions.addAll(VerhaltenImEinsatz.fragenVerhaltenImEinsatz);
   }
 }

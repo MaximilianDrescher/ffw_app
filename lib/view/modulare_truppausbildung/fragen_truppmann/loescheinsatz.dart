@@ -245,15 +245,6 @@ class Loescheinsatz {
     },
     {
       'questionText':
-          'Die Schläuche für Sonderrohre werden am Verteiler (in Fließrichtung)...',
-      'answers': [
-        {'text': 'in der Mitte angeschlossen', 'score': 1},
-        {'text': 'links angeschlossen', 'score': 0},
-        {'text': 'rechts angeschlossen', 'score': 0}
-      ]
-    },
-    {
-      'questionText':
           'Eine angetretene Gruppe erhält den Einsatzbefehl: „Wasserentnahmestelle der Überflurhydrant - Verteiler neben Hauseingang - zum Einsatz fertig!”. Welche Aufgaben haben Sie als Angriffstruppführer?',
       'answers': [
         {'text': 'Ausrüsten und bis zum Hauseingang vorgehen', 'score': 0},
@@ -312,7 +303,7 @@ class Loescheinsatz {
     },
     {
       'questionText':
-          'Dürfen sie eigenverantwortlich während der Löscharbeiten das Mundstück ihres BMStrahlrohres abschrauben?',
+          'Dürfen sie eigenverantwortlich während der Löscharbeiten das Mundstück ihres BM-Strahlrohres abschrauben?',
       'answers': [
         {
           'text':

@@ -141,5 +141,13 @@ class SichernUndAbsichern {
         }
       ]
     },
+    {
+      'questionText': 'Welche länge hat eine Feuerwehrleine?',
+      'answers': [
+        {'text': '30m', 'score': 1},
+        {'text': '25m', 'score': 0},
+        {'text': '15m', 'score': 0}
+      ]
+    },
   ];
 }
